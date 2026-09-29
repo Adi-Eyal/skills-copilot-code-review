@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const announcementBanner = document.getElementById("announcement-banner");
+  if (
+    announcementBanner &&
+    Date.now() > Date.parse(announcementBanner.dataset.deadline)
+  ) {
+    announcementBanner.hidden = true;
+  }
+
   // DOM elements
   const activitiesList = document.getElementById("activities-list");
   const messageDiv = document.getElementById("message");
